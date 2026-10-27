@@ -8,7 +8,7 @@
 html,body{margin:0;height:100%;font-family:-apple-system,"SF Pro Display","Helvetica Neue",Helvetica,Arial,sans-serif;background:#000}
 #home{position:fixed;inset:0;overflow:hidden;z-index:1}
 #vid{position:fixed;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none;z-index:0}
-#snd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;z-index:10;font:700 14px/1 -apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--or);background:rgba(0,0,0,.65);border:1px solid rgba(255,106,0,.7);border-radius:999px;padding:10px 16px;cursor:pointer}
+#snd{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:14px;z-index:10;font:700 14px/1 -apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--or);background:rgba(0,0,0,.65);border:1px solid rgba(255,106,0,.7);border-radius:999px;padding:10px 16px;cursor:pointer}
 #snd:focus-visible{outline:2px solid var(--or);outline-offset:2px}
 #home .dim{position:absolute;inset:0;background:rgba(0,0,0,.62)}
 #home .c{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:6vh 8vw 22vh;overflow-y:auto;color:var(--or);font-weight:700}
@@ -21,11 +21,12 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-heig
 #ct i{width:8px;height:8px;border-radius:50%;background:var(--or);transition:all .25s}
 #ct[aria-expanded=true] i{width:16px;height:2px;border-radius:0}
 #cp{max-height:0;overflow:hidden;transition:max-height .3s ease}
-#home .m a{display:block;width:fit-content;color:var(--or);text-decoration:none;font-weight:700;font-size:clamp(16px,2vw,22px);margin:4px 0 14px;opacity:1}
-#home .m a:last-of-type{margin-bottom:22px}
-#cp span{display:block;font-size:14px;opacity:.8;color:var(--or);font-weight:700}
+#cp .tg{display:block;color:var(--or);font-size:14px;font-weight:700;opacity:.8;margin:2px 0 14px}
+#cp .lk{display:flex;flex-wrap:wrap;gap:12px;padding-bottom:22px}
+#home #cp a{display:inline-block;margin:0;padding:11px 22px;border:1px solid rgba(255,106,0,.7);border-radius:999px;color:var(--or);background:rgba(0,0,0,.5);text-decoration:none;font-weight:700;font-size:clamp(15px,1.8vw,19px);cursor:pointer}
+#home #cp a:hover,#home #cp a:focus-visible{background:var(--or);color:#000;outline:none}
 #pg{display:none;position:relative;z-index:1;min-height:100%;background:rgba(244,239,228,.96);color:var(--ink)}
-#pg .w{max-width:680px;margin:0 auto;padding:48px 24px 120px}
+#pg .w{max-width:680px;margin:0 auto;padding:76px 24px 120px}
 #pg .b{color:var(--ink);font-weight:700;cursor:pointer;text-decoration:none;font-size:15px}
 #pg h2{font-size:clamp(26px,4vw,40px);letter-spacing:-.02em;line-height:1.1;margin:32px 0 28px}
 #pg h3{font-size:24px;font-weight:700;letter-spacing:-.01em;margin:56px 0 18px;padding-top:22px;border-top:2px solid var(--ink)}
@@ -40,9 +41,31 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-heig
 .sp .d{margin:0 12% 12px 22%}
 .sp .f{font-family:inherit;font-weight:700;margin:26px 0 8px}
 @media(max-width:560px){.sp{padding:24px 14px;font-size:13px}.sp .c{margin-left:30%}.sp .p{margin-left:22%}.sp .d{margin:0 4% 12px 12%}}
+#nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;z-index:10;display:flex;gap:10px}
+#nav button{all:unset;box-sizing:border-box;font:700 14px/1 -apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--or);background:rgba(0,0,0,.65);border:1px solid rgba(255,106,0,.7);border-radius:999px;padding:10px 16px;cursor:pointer}
+#nav button[aria-current=page]{background:var(--or);color:#000}
+#nav button:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+#about{display:none;position:fixed;inset:0;z-index:1;overflow-y:auto;color:var(--or);font-weight:700}
+#about .dim{position:fixed;inset:0;background:rgba(0,0,0,.62);pointer-events:none}
+#about .ac{position:relative;z-index:2;padding:calc(env(safe-area-inset-top,0px) + 90px) 8vw 10vh}
+#about .hero{display:flex;flex-wrap:wrap;align-items:flex-end;gap:3vh 4vw;margin-bottom:9vh}
+#about .hl{flex:2 1 420px;margin:0;font-size:clamp(34px,6.4vw,92px);line-height:1;letter-spacing:-.03em}
+#about .adj{flex:1 1 220px;max-width:16em;margin:0;font-size:clamp(16px,2.2vw,30px);line-height:1.25}
+#about .films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4vw;max-width:1100px}
+#about .fr{margin:0}
+#about .vf{display:block;width:100%;aspect-ratio:16/9;border:2px solid rgba(255,106,0,.7);border-radius:10px;background:#000}
+#about figcaption{margin-top:14px;font-size:clamp(14px,1.5vw,18px);line-height:1.5}
+@media(max-width:760px){#about .films{grid-template-columns:1fr;gap:36px}#snd,#nav button{padding:9px 12px;font-size:13px}#nav{gap:6px;right:10px}#snd{left:10px}}
 </style></head><body>
 <video id="vid" autoplay muted loop playsinline preload="auto" src="video.mp4"></video>
 <button id="snd" type="button" aria-pressed="false">Sound: off</button>
+<nav id="nav" aria-label="Main"><button type="button" id="nvp">Portfolio</button><button type="button" id="nva">About</button></nav>
+<div id="about"><div class="dim"></div><div class="ac">
+<div class="hero"><h1 class="hl">ADITYA, ANOTHER MEAT IN THE MIX.</h1><p class="adj">SLIGHTLY NEUROTIC, DREAMY AND PREVIOUSLY FAT.</p></div>
+<div class="films">
+<figure class="fr"><iframe class="vf" src="https://drive.google.com/file/d/1DPG3PpijYQlwUSTsHIgm4hXM5gdxFR90/preview" title="Movie 1" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe><figcaption>Won First at inter collegiate Kirorimal college, Delhi university. (EMBARRASED TO SHARE; PLAYED THE JUDGES MORE THAN MAKING A SHORT FILM.)</figcaption></figure>
+<figure class="fr"><iframe class="vf" src="https://www.youtube.com/embed/4jKRe7fj238?si=_s5uh9slsGuTxrKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe><figcaption>THE SHORT FILM WORKING BEHIND. (MADE IT IN TWO DAYS, LOVED THE PROCESS WITH THE COLLEGE FOLKS WORKING WITH ME.)</figcaption></figure>
+</div></div></div>
 <div id="home">
 <div class="dim"></div>
 <div class="c"><h1>Spec Advertising Portfolio</h1>
@@ -52,7 +75,7 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-heig
 <a data-k="4" tabindex="0">We know that we don’t.</a>
 <a data-k="5" tabindex="0">Message to you: See me in everyone and know that i am happy for you.</a>
 <a data-k="6" tabindex="0">Your time is not yours.</a></div>
-<div class="m"><button id="ct" aria-expanded="false" aria-controls="cp">Contact<i></i></button><div id="cp"><span>Work with me:</span><a href="mailto:adityavermaworkid@gmail.com">adityavermaworkid@gmail.com</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">linkedin.com/in/adityanverma</a></div></div>
+<div class="m"><button id="ct" aria-expanded="false" aria-controls="cp">Contact<i></i></button><div id="cp"><span class="tg">Email to find your brand’s new tagline</span><div class="lk"><a href="mailto:adityavermaworkid@gmail.com" target="_blank" rel="noopener">Email</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">LinkedIn</a></div></div></div>
 </div>
 <div id="pg"><div class="w"><a class="b" id="back" tabindex="0">← Spec Advertising Portfolio</a><div id="body"></div></div></div>
 <script>
@@ -372,21 +395,30 @@ function render(k){
  if(sp)o+="</div>";
  document.getElementById("body").innerHTML=h+o;
 }
-function route(){
- var k=(location.hash||"").slice(1),home=document.getElementById("home"),pg=document.getElementById("pg");
- if(P[k]){render(k);home.style.display="none";pg.style.display="block";document.documentElement.style.background="#f4efe4";window.scrollTo(0,0)}
+function route(k){
+ if(typeof k!="string")k=(location.hash||"").slice(1);
+ var home=document.getElementById("home"),pg=document.getElementById("pg"),ab=document.getElementById("about"),nav=document.getElementById("nav");
+ var onAbout=k=="about",onPg=!!P[k];
+ ab.style.display=onAbout?"block":"none";
+ nav.style.display=onPg?"none":"";
+ document.getElementById("nva").setAttribute("aria-current",onAbout?"page":"false");
+ document.getElementById("nvp").setAttribute("aria-current",(!onAbout&&!onPg)?"page":"false");
+ if(onAbout){home.style.display="none";pg.style.display="none";document.documentElement.style.background="#000";ab.scrollTop=0}
+ else if(onPg){render(k);home.style.display="none";pg.style.display="block";document.documentElement.style.background="#f4efe4";window.scrollTo(0,0)}
  else{home.style.display="";pg.style.display="none";document.documentElement.style.background="#000"}
 }
 document.querySelectorAll("#home a[data-k]").forEach(function(a){
- var go=function(){location.hash=a.dataset.k;route()};
+ var go=function(){try{location.hash=a.dataset.k}catch(e){}route(a.dataset.k)};
  a.addEventListener("click",go);a.addEventListener("keydown",function(e){if(e.key=="Enter")go()});
 });
 var b=document.getElementById("back");
-var back=function(){location.hash="";route()};
+var back=function(){try{location.hash=""}catch(e){}route("")};
+document.getElementById("nva").addEventListener("click",function(){try{location.hash="about"}catch(e){}route("about")});
+document.getElementById("nvp").addEventListener("click",function(){try{location.hash="portfolio"}catch(e){}route("portfolio")});
 b.addEventListener("click",back);b.addEventListener("keydown",function(e){if(e.key=="Enter")back()});
 var ct=document.getElementById("ct"),cp=document.getElementById("cp");
-ct.addEventListener("click",function(){var o=ct.getAttribute("aria-expanded")=="true";ct.setAttribute("aria-expanded",!o);cp.style.maxHeight=o?"0":cp.scrollHeight+"px"});
+ct.addEventListener("click",function(){var o=ct.getAttribute("aria-expanded")=="true";ct.setAttribute("aria-expanded",!o);cp.classList.toggle("open",!o);cp.style.maxHeight=o?"0":cp.scrollHeight+"px"});
 var v=document.getElementById("vid"),sb=document.getElementById("snd");v.muted=true;v.play().catch(function(){});
 sb.addEventListener("click",function(){v.muted=!v.muted;sb.textContent=v.muted?"Sound: off":"Sound: on";sb.setAttribute("aria-pressed",!v.muted);v.play().catch(function(){})});
-window.addEventListener("hashchange",route);route();
+window.addEventListener("hashchange",function(){route()});route();
 </script></body></html>
