@@ -59,7 +59,19 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-heig
 #about .films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4vw;max-width:1100px}
 #about .fr{margin:0}
 #about .vf{display:block;width:100%;aspect-ratio:16/9;border:2px solid rgba(255,106,0,.7);border-radius:10px;background:#000}
-#about figcaption{margin-top:14px;font-size:clamp(14px,1.5vw,18px);line-height:1.5}
+#about .films{align-items:start}
+#about .dd{margin-top:14px;border-top:1px solid rgba(255,106,0,.55);border-bottom:1px solid rgba(255,106,0,.55)}
+#about .fr>.dd:first-child{margin-top:0}
+#about .dd summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:clamp(16px,2vw,22px);font-weight:700;line-height:1.3;color:var(--or);cursor:pointer}
+#about .dd summary::-webkit-details-marker{display:none}
+#about .dd summary:focus-visible{outline:2px solid var(--or);outline-offset:2px}
+#about .dd summary i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--or);transition:all .25s}
+#about .dd[open] summary i{width:16px;height:2px;border-radius:0}
+#about .dd .tx{padding:0 0 8px}
+#about .dd .tx p{margin:0 0 14px;font-size:clamp(14px,1.5vw,18px);line-height:1.6;opacity:.9}
+#about .ol{list-style:none;margin:22px 0 0;padding:0}
+#about .ol li{margin:0 0 14px;font-size:clamp(16px,1.9vw,22px);line-height:1.3}
+#about .ol li small{font-size:.72em;opacity:.6;font-weight:700}
 @media(max-width:760px){#about .films{grid-template-columns:1fr;gap:36px}#snd,#nav button{padding:9px 12px;font-size:13px}#nav{gap:6px;right:10px}#snd{left:10px}}
 </style></head><body>
 <video id="vid" autoplay muted loop playsinline preload="auto" src="video.mp4"></video>
@@ -68,8 +80,29 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-heig
 <div id="about"><div class="dim"></div><div class="ac">
 <div class="hero"><h1 class="hl">ADITYA, ANOTHER MEAT IN THE MIX.</h1><p class="adj">SLIGHTLY NEUROTIC, DREAMY AND PREVIOUSLY FAT.</p></div>
 <div class="films">
-<figure class="fr"><iframe class="vf" src="https://drive.google.com/file/d/1DPG3PpijYQlwUSTsHIgm4hXM5gdxFR90/preview" title="Movie 1" allow="autoplay; fullscreen" allowfullscreen loading="lazy"></iframe><figcaption>Won first at inter collegiate Kirorimal college, Delhi university. (Embarrassed to share; played the judges more than making a short film.)</figcaption></figure>
-<figure class="fr"><iframe class="vf" src="https://www.youtube.com/embed/4jKRe7fj238?si=_s5uh9slsGuTxrKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe><figcaption>The short film working behind. (Made it in two days, loved the process with the college folks working with me.)</figcaption></figure>
+<figure class="fr"><details class="dd"><summary>DOUBLING DOWN ON WHAT I LOVE. ONE LINERS.<i></i></summary><div class="tx"><p>This list is a collection of the recent one liners my brain gave me in my notes app.</p><p>My process is usually going through the heavy research and finding disappointment in not immediately finding something that excites me, so then i start to distract myself with something else, and then fifteen minutes later, a cool line pops up; sometimes a line in english words or sometimes an image. Most times neither, but a language that can’t even be called language, but i understand.</p><p>And suddenly that particular idea can be branched into a world. Forget a campaign.</p></div></details>
+<ul class="ol">
+<li>Fear is a good feeling to have.</li>
+<li>Afraid of success. <small>(Risk Taking)</small></li>
+<li>Women. Love stories. <small>(Books)</small></li>
+<li>Life is a one way ticket. <small>(Coinbase)</small></li>
+<li>Life and Danger, Synonymous.</li>
+<li>I don’t compete, simply because I can lose. <small>(Radical winning)</small></li>
+<li>Be anything but ( not) not yourself.</li>
+<li>One task. Only. <small>(Productivity)</small></li>
+<li>Stronger together, maybe.<br>Weaker alone, yes.</li>
+<li>Choose a loop. <small>(Purpose)</small></li>
+<li>I am probably already fooled. <small>(Beliefs)</small></li>
+<li>Real discomfort is chosen. <small>(Running Shoes)</small></li>
+<li>Take everything to heart. Care. <small>(Purpose; Specific)</small></li>
+<li>Science is accidental.</li>
+<li>Slow is the future fast.</li>
+<li>Unleashing. Is meeting good. God. <small>(Art)</small></li>
+<li>Don’t solve my problems. I don’t have problems. <small>(Unsolicited Advice)</small></li>
+<li>Every dictator has a good side. <small>(Recognising ill)</small></li>
+<li>Secrets are safe, out in the open. <small>(Risk taking; Business; Ideas)</small></li>
+</ul></figure>
+<figure class="fr"><iframe class="vf" src="https://www.youtube.com/embed/4jKRe7fj238?si=_s5uh9slsGuTxrKc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen loading="lazy"></iframe><details class="dd"><summary>Silence Can Speak.<i></i></summary><div class="tx"><p>After winning a short film in an intercollegiate, the human vice called “ambition” took over me. And I soon convinced the team to make another one, because it was aching not to. And i learned, passion is contagious. Or to be precise, my passion.</p><p>We shot it in a day inside the campus, skipping our classes and i edited and surprised the team with the final product the next day. We shared it amongst friends, who we thought wouldn’t dismiss the idea of silent black and white, experimental film at the first glance.</p><p>One of them, stating ”What in the slavic art film is this. Brilliant. It’s about expression. An aura of expression emanates from the character but is invisible to others. The world around him brings it out and because of that in a way sees the inanimate world does see it. Things complement it but nothing reacts to it. Mimesis of colorfulness in black and white.”</p><p>At the end, We were happy. With the fact that something can be done. At least, something.</p></div></details></figure>
 </div></div></div>
 <div class="m"><button id="ct" aria-expanded="false" aria-controls="cp">Contact<i></i></button><div id="cp"><div class="lk"><a href="mailto:adityavermaworkid@gmail.com" target="_blank" rel="noopener">adityavermaworkid@gmail.com</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">linkedin.com/in/adityanverma</a></div></div></div>
 <div id="home">
