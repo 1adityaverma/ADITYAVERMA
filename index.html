@@ -14,7 +14,7 @@ html,body{margin:0;height:100%;font-family:-apple-system,"SF Pro Display","Helve
 #snd[aria-pressed=true]{background:var(--or);color:#000}
 #home .dim{position:absolute;inset:0;background:rgba(0,0,0,.28)}
 #home .c{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-start;padding:6vh 8vw 22vh;overflow-y:auto;color:var(--or);font-weight:700}
-h1{font-size:clamp(28px,5vw,64px);margin:0 0 1vh;letter-spacing:-.03em;line-height:1.05}
+h1{font-size:clamp(28px,5vw,64px);margin:0 0 -26px;letter-spacing:-.03em;line-height:1.05}
 /* ---- CONTACT (same on Portfolio and About) ---- */
 .m{position:fixed;bottom:5vh;left:8vw;right:8vw;max-width:786px;z-index:8;border-top:1px solid rgba(255,106,0,.55);border-bottom:1px solid rgba(255,106,0,.55);background:none!important;background-color:transparent!important;box-shadow:none}
 #ct{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--or);background:none!important;cursor:pointer}
@@ -47,7 +47,7 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 1vh;letter-spacing:-.03em;line-heig
 /* ---- HOME: pouches ---- */
 #home{cursor:pointer}
 h1{cursor:default;align-self:flex-start;text-shadow:0 2px 18px rgba(0,0,0,.65)}
-#home .c{padding-top:4vh;padding-bottom:30vh}
+#home .c{padding-top:calc(env(safe-area-inset-top,0px) + 66px);padding-bottom:30vh}
 .ps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(18px,3vw,44px);width:100%;max-width:1100px;cursor:default}
 @media(max-width:900px){.ps{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:560px){.ps{grid-template-columns:minmax(0,340px)}}
