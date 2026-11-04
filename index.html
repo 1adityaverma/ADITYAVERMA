@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- version: transparent-v3 -->
+<!-- version: pouches-v1 -->
 <html lang="en"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Spec Advertising Portfolio</title>
@@ -13,13 +13,10 @@ html,body{margin:0;height:100%;font-family:-apple-system,"SF Pro Display","Helve
 #snd:focus-visible{outline:2px solid var(--or);outline-offset:2px}
 #snd[aria-pressed=true]{background:var(--or);color:#000}
 #home .dim{position:absolute;inset:0;background:rgba(0,0,0,.62)}
-#home .c{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:center;padding:6vh 8vw 22vh;overflow-y:auto;color:var(--or);font-weight:700}
-h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-height:1.05}
-#home .c a{color:var(--or);text-decoration:none;font-size:clamp(16px,2.1vw,26px);margin:1.3vh 0;max-width:42em;line-height:1.3;opacity:.8;transition:opacity .2s;cursor:pointer}
-#home .c a:hover,#home .c a:focus-visible{opacity:1;outline:none;text-decoration:underline;text-underline-offset:5px}
+#home .c{position:relative;z-index:2;height:100%;display:flex;flex-direction:column;justify-content:flex-start;padding:6vh 8vw 22vh;overflow-y:auto;color:var(--or);font-weight:700}
+h1{font-size:clamp(28px,5vw,64px);margin:0 0 1vh;letter-spacing:-.03em;line-height:1.05}
 /* ---- CONTACT (same on Portfolio and About) ---- */
 .m{position:fixed;bottom:5vh;left:8vw;right:8vw;max-width:786px;z-index:8;border-top:1px solid rgba(255,106,0,.55);border-bottom:1px solid rgba(255,106,0,.55);background:none!important;background-color:transparent!important;box-shadow:none}
-.m.inflow{position:relative;bottom:auto;left:auto;right:auto;margin-top:9vh}
 #ct{all:unset;box-sizing:border-box;width:100%;display:flex;justify-content:space-between;align-items:center;padding:20px 0;font-size:clamp(16px,2vw,22px);font-weight:700;color:var(--or);background:none!important;cursor:pointer}
 #ct:focus-visible{outline:2px solid var(--or);outline-offset:2px}
 #ct i{width:8px;height:8px;border-radius:50%;background:var(--or);transition:all .25s}
@@ -46,76 +43,61 @@ h1{font-size:clamp(28px,5vw,64px);margin:0 0 5vh;letter-spacing:-.03em;line-heig
 .sp .d{margin:0 12% 12px 22%}
 .sp .f{font-family:inherit;font-weight:700;margin:26px 0 8px}
 @media(max-width:560px){.sp{padding:24px 14px;font-size:13px}.sp .c{margin-left:30%}.sp .p{margin-left:22%}.sp .d{margin:0 4% 12px 12%}}
-#nav{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);right:14px;z-index:10;display:flex;gap:10px}
-#nav button{all:unset;box-sizing:border-box;font:700 14px/1 -apple-system,"Helvetica Neue",Arial,sans-serif;color:var(--or);background:transparent;border:1px solid rgba(255,106,0,.7);border-radius:999px;padding:10px 16px;cursor:pointer}
-#nav button[aria-current=page]{border-color:var(--or);text-decoration:underline;text-underline-offset:4px}
-#nav button:focus-visible{outline:2px solid var(--or);outline-offset:2px}
-#about{display:none;position:fixed;inset:0;z-index:1;overflow-y:auto;color:var(--or);font-weight:700}
-#about .dim{position:fixed;inset:0;background:rgba(0,0,0,.62);pointer-events:none}
-#about .ac{position:relative;z-index:2;padding:calc(env(safe-area-inset-top,0px) + 90px) 8vw 8vh}
-#about .hero{display:flex;flex-wrap:wrap;align-items:flex-end;gap:3vh 4vw;margin-bottom:9vh}
-#about .hl{flex:2 1 420px;margin:0;font-size:clamp(34px,6.4vw,92px);line-height:1;letter-spacing:-.03em}
-#about .adj{flex:1 1 220px;max-width:16em;margin:0;font-size:clamp(16px,2.2vw,30px);line-height:1.25}
-#about .films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4vw;max-width:1100px}
-#about .fr{margin:0}
-#about .vf{display:block;width:100%;aspect-ratio:16/9;border:2px solid rgba(255,106,0,.7);border-radius:10px;background:#000}
-#about .films{align-items:start}
-#about .dd{margin-top:14px;border-top:1px solid rgba(255,106,0,.55);border-bottom:1px solid rgba(255,106,0,.55)}
-#about .fr>.dd:first-child{margin-top:0}
-#about .dd summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 0;font-size:clamp(16px,2vw,22px);font-weight:700;line-height:1.3;color:var(--or);cursor:pointer}
-#about .dd summary::-webkit-details-marker{display:none}
-#about .dd summary:focus-visible{outline:2px solid var(--or);outline-offset:2px}
-#about .dd summary i{flex:none;width:8px;height:8px;border-radius:50%;background:var(--or);transition:all .25s}
-#about .dd[open] summary i{width:16px;height:2px;border-radius:0}
-#about .dd .tx{padding:0 0 8px}
-#about .dd .tx p{margin:0 0 14px;font-size:clamp(14px,1.5vw,18px);line-height:1.6;opacity:.9}
-#about .ol{list-style:none;margin:22px 0 0;padding:0}
-#about .ol li{margin:0 0 14px;font-size:clamp(16px,1.9vw,22px);line-height:1.3}
-#about .ol li small{font-size:.72em;opacity:.6;font-weight:700}
-@media(max-width:760px){#about .films{grid-template-columns:1fr;gap:36px}#snd,#nav button{padding:9px 12px;font-size:13px}#nav{gap:6px;right:10px}#snd{left:10px}}
+
+/* ---- HOME: pouches ---- */
+#home{cursor:pointer}
+h1{cursor:default;align-self:flex-start}
+#home .c{padding-top:4vh;padding-bottom:30vh}
+.ps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 clamp(18px,3vw,44px);width:100%;max-width:1100px;cursor:default}
+@media(max-width:900px){.ps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:560px){.ps{grid-template-columns:minmax(0,340px)}}
+.pouch{--front:168px;--ch:174px;--rise:60px;--sp:34%;position:relative;height:calc(var(--front) + 120px);-webkit-tap-highlight-color:transparent}
+.pouch.n2{--sp:58%}
+.pouch.n4{--sp:30%}
+.cards{position:absolute;inset:0;pointer-events:none}
+.cd{all:unset;box-sizing:border-box;position:absolute;bottom:2px;left:var(--l,13%);width:var(--w,74%);height:var(--ch);z-index:var(--z);background:#fffdf7;border-top:5px solid var(--or);border-radius:7px;box-shadow:0 8px 18px rgba(0,0,0,.4);color:var(--ink);cursor:pointer;pointer-events:none;transform-origin:50% 100%;transform:translateX(calc(var(--o)*3%)) rotate(calc(var(--o)*1.6deg));transition:transform .4s cubic-bezier(.2,.9,.25,1.05),box-shadow .3s}
+.n4 .cd{--l:21%;--w:58%}
+.cd::after{content:"";position:absolute;left:14px;right:14px;bottom:18px;height:64px;background:repeating-linear-gradient(to bottom,#e6dec9 0 2px,transparent 2px 14px)}
+.cd .lb{position:absolute;left:12px;right:6px;top:13px;text-align:left;font:800 15px/1.15 -apple-system,"Helvetica Neue",Arial,sans-serif;letter-spacing:-.01em;opacity:0;transition:opacity .2s}
+.n4 .lb{font-size:12.5px}
+.pouch.open .cd{pointer-events:auto;transform:translate(calc(var(--o)*var(--sp)),calc(var(--a)*8px - var(--rise) - var(--s)*20px)) rotate(calc(var(--o)*6deg)) scale(1.06)}
+.pouch.open .cd .lb{opacity:1;transition-delay:.1s}
+.pouch.open .cd:hover,.pouch.open .cd:focus-visible{z-index:30;transform:translate(calc(var(--o)*var(--sp)*.8),calc(-1*var(--rise) - var(--s)*20px - 22px)) rotate(0deg) scale(1.14);box-shadow:0 16px 28px rgba(0,0,0,.5);outline:none}
+.cd:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+.fw{position:absolute;left:0;right:0;bottom:0;height:var(--front);z-index:50;filter:drop-shadow(0 12px 12px rgba(0,0,0,.55))}
+.front{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:40px 22px 18px;text-align:center;color:var(--ink);font-weight:800;font-size:clamp(15px,1.5vw,19px);line-height:1.25;letter-spacing:-.01em;background:url("data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20width%3D%27160%27%20height%3D%27160%27%3E%3Cfilter%20id%3D%27n%27%3E%3CfeTurbulence%20type%3D%27fractalNoise%27%20baseFrequency%3D%27.85%27%20numOctaves%3D%272%27%20stitchTiles%3D%27stitch%27/%3E%3CfeColorMatrix%20values%3D%270%200%200%200%20.25%20%200%200%200%200%20.15%20%200%200%200%200%20.05%20%200%200%200%20.22%200%27/%3E%3C/filter%3E%3Crect%20width%3D%27100%25%27%20height%3D%27100%25%27%20filter%3D%27url%28%23n%29%27/%3E%3C/svg%3E"),linear-gradient(90deg,rgba(0,0,0,.16),rgba(0,0,0,0) 9%,rgba(0,0,0,0) 91%,rgba(0,0,0,.16)),linear-gradient(180deg,#d9b985,#c8a26d);clip-path:polygon(0 2%,20% 3%,35% 7%,45% 12%,50% 13%,55% 12%,65% 7%,80% 3%,100% 2%,100% 100%,0 100%)}
+.front::after{content:"";position:absolute;left:0;right:0;bottom:0;height:12px;background:linear-gradient(180deg,rgba(0,0,0,0),rgba(0,0,0,.2))}
+#wf{position:fixed;top:calc(env(safe-area-inset-top,0px) + 14px);left:50%;transform:translate(-50%,-400%);z-index:11;font:700 14px/1 -apple-system,"Helvetica Neue",Arial,sans-serif;color:#000;background:var(--or);border:0;border-radius:999px;padding:10px 16px;cursor:pointer}
+#wf:focus{transform:translate(-50%,0)}
+/* contact scrim + hero lines */
+#cs{position:fixed;inset:0;z-index:7;background:rgba(0,0,0,.94);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .3s}
+#cs.on{opacity:1;pointer-events:auto}
+#cp .hl2{margin:8px 0 10px;font-size:clamp(26px,4.4vw,56px);line-height:1;letter-spacing:-.03em;font-weight:700;color:var(--or)}
+#cp .adj2{margin:0 0 24px;font-size:clamp(15px,1.9vw,24px);line-height:1.25;font-weight:700;color:var(--or);opacity:.9}
+/* ---- card page extras ---- */
+#pg h3.ch{display:inline-block;font-size:22px;margin:0 0 26px;padding:0 0 4px;border-top:0;border-bottom:3px solid var(--or)}
+#pg .sib{margin:56px 0 0;padding-top:20px;border-top:2px solid var(--ink);font-size:15px;line-height:2}
+#pg .sib a{color:var(--ink);font-weight:800;cursor:pointer;margin-right:18px;text-decoration:underline;text-underline-offset:4px}
+/* ---- film page ---- */
+#fm{display:none;position:fixed;inset:0;z-index:1;overflow-y:auto;color:var(--or);font-weight:700;background:rgba(0,0,0,.9)}
+#fm .fc{max-width:1180px;margin:0 auto;padding:calc(env(safe-area-inset-top,0px) + 70px) 6vw 10vh}
+#fm .b{color:var(--or);cursor:pointer;font-size:15px;font-weight:700}
+#fm .fg{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr);gap:4vw;align-items:start;margin-top:28px}
+#fm .vf{display:block;width:100%;aspect-ratio:16/9;border:2px solid rgba(255,106,0,.7);border-radius:10px;background:#000}
+#fm h2{margin:0 0 18px;font-size:clamp(28px,3.6vw,48px);letter-spacing:-.03em;line-height:1.05}
+#fm p{margin:0 0 14px;font-size:clamp(14px,1.5vw,18px);line-height:1.6;opacity:.9}
+#fm .b:focus-visible,#pg .b:focus-visible{outline:2px solid var(--or);outline-offset:3px}
+@media(max-width:900px){#fm .fg{grid-template-columns:1fr}}
+@media(max-width:760px){#snd{padding:9px 12px;font-size:13px;left:10px}}
+@media(prefers-reduced-motion:reduce){.cd,.cd .lb,#cs,#cp{transition-duration:.01s!important}}
 </style></head><body>
 <video id="vid" autoplay muted loop playsinline preload="auto" src="video.mp4"></video>
 <button id="snd" type="button" aria-pressed="false">Sound: off</button>
-<nav id="nav" aria-label="Main"><button type="button" id="nvp">Portfolio</button><button type="button" id="nva">About</button></nav>
-<div id="about"><div class="dim"></div><div class="ac">
-<div class="hero"><h1 class="hl">ADITYA, ANOTHER MEAT IN THE MIX.</h1><p class="adj">SLIGHTLY NEUROTIC, DREAMY AND PREVIOUSLY FAT.</p></div>
-<div class="films">
-<figure class="fr"><details class="dd"><summary>DOUBLING DOWN ON WHAT I LOVE. ONE LINERS.<i></i></summary><div class="tx"><p>This list is a collection of the recent one liners my brain gave me in my notes app.</p><p>My process is usually going through the heavy research and finding disappointment in not immediately finding something that excites me, so then i start to distract myself with something else, and then fifteen minutes later, a cool line pops up; sometimes a line in english words or sometimes an image. Most times neither, but a language that can’t even be called language, but i understand.</p><p>And suddenly that particular idea can be branched into a world. Forget a campaign.</p></div></details>
-<ul class="ol">
-<li>Fear is a good feeling to have.</li>
-<li>Afraid of success. <small>(Risk Taking)</small></li>
-<li>Women. Love stories. <small>(Books)</small></li>
-<li>Life is a one way ticket. <small>(Coinbase)</small></li>
-<li>Life and Danger, Synonymous.</li>
-<li>I don’t compete, simply because I can lose. <small>(Radical winning)</small></li>
-<li>Be anything but ( not) not yourself.</li>
-<li>One task. Only. <small>(Productivity)</small></li>
-<li>Stronger together, maybe.<br>Weaker alone, yes.</li>
-<li>Choose a loop. <small>(Purpose)</small></li>
-<li>I am probably already fooled. <small>(Beliefs)</small></li>
-<li>Real discomfort is chosen. <small>(Running Shoes)</small></li>
-<li>Take everything to heart. Care. <small>(Purpose; Specific)</small></li>
-<li>Science is accidental.</li>
-<li>Slow is the future fast.</li>
-<li>Unleashing. Is meeting good. God. <small>(Art)</small></li>
-<li>Don’t solve my problems. I don’t have problems. <small>(Unsolicited Advice)</small></li>
-<li>Every dictator has a good side. <small>(Recognising ill)</small></li>
-<li>Secrets are safe, out in the open. <small>(Risk taking; Business; Ideas)</small></li>
-</ul></figure>
-<figure class="fr"><video class="vf" src="silence-can-speak.mp4" controls playsinline preload="metadata" title="Silence Can Speak"></video><details class="dd"><summary>Silence Can Speak.<i></i></summary><div class="tx"><p>After winning a short film in an intercollegiate, the human vice called “ambition” took over me. And I soon convinced the team to make another one, because it was aching not to. And i learned, passion is contagious. Or to be precise, my passion.</p><p>We shot it in a day inside the campus, skipping our classes and i edited and surprised the team with the final product the next day. We shared it amongst friends, who we thought wouldn’t dismiss the idea of silent black and white, experimental film at the first glance.</p><p>One of them, stating ”What in the slavic art film is this. Brilliant. It’s about expression. An aura of expression emanates from the character but is invisible to others. The world around him brings it out and because of that in a way sees the inanimate world does see it. Things complement it but nothing reacts to it. Mimesis of colorfulness in black and white.”</p><p>At the end, We were happy. With the fact that something can be done. At least, something.</p></div></details></figure>
-</div></div></div>
-<div class="m"><button id="ct" aria-expanded="false" aria-controls="cp">Contact<i></i></button><div id="cp"><div class="lk"><a href="mailto:adityavermaworkid@gmail.com" target="_blank" rel="noopener">adityavermaworkid@gmail.com</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">linkedin.com/in/adityanverma</a></div></div></div>
-<div id="home">
-<div class="dim"></div>
-<div class="c"><h1>Spec Advertising Portfolio</h1>
-<a data-k="1" tabindex="0">A company against makeup selling makeup.</a>
-<a data-k="2" tabindex="0">Newspapers aren’t cool anymore. Their readers always were.</a>
-<a data-k="3" tabindex="0">Give your little assemblers a chance.</a>
-<a data-k="4" tabindex="0">We know that we don’t.</a>
-<a data-k="5" tabindex="0">Message to you: See me in everyone and know that i am happy for you.</a>
-<a data-k="6" tabindex="0">Your time is not yours.</a></div>
-</div>
+<div id="home"><div class="dim"></div><div class="c"><h1>Spec Advertising Portfolio</h1><div class="ps" id="ps"></div></div><button id="wf" type="button">Watch the film</button></div>
+<div id="cs"></div>
+<div class="m"><button id="ct" aria-expanded="false" aria-controls="cp">Contact<i></i></button><div id="cp"><div class="hr"><p class="hl2">ADITYA, ANOTHER MEAT IN THE MIX.</p><p class="adj2">SLIGHTLY NEUROTIC, DREAMY AND PREVIOUSLY FAT.</p></div><div class="lk"><a href="mailto:adityavermaworkid@gmail.com" target="_blank" rel="noopener">adityavermaworkid@gmail.com</a><a href="https://www.linkedin.com/in/adityanverma" target="_blank" rel="noopener">linkedin.com/in/adityanverma</a></div></div></div>
 <div id="pg"><div class="w"><a class="b" id="back" tabindex="0">← Spec Advertising Portfolio</a><div id="body"></div></div></div>
+<div id="fm"><div class="fc"><a class="b" id="fback" tabindex="0">← Spec Advertising Portfolio</a><div class="fg"><video class="vf" id="fv" src="silence-can-speak.mp4" controls playsinline preload="metadata" title="Silence Can Speak"></video><div><h2>Silence Can Speak.</h2><p>After winning a short film in an intercollegiate, the human vice called “ambition” took over me. And I soon convinced the team to make another one, because it was aching not to. And i learned, passion is contagious. Or to be precise, my passion.</p><p>We shot it in a day inside the campus, skipping our classes and i edited and surprised the team with the final product the next day. We shared it amongst friends, who we thought wouldn’t dismiss the idea of silent black and white, experimental film at the first glance.</p><p>One of them, stating ”What in the slavic art film is this. Brilliant. It’s about expression. An aura of expression emanates from the character but is invisible to others. The world around him brings it out and because of that in a way sees the inanimate world does see it. Things complement it but nothing reacts to it. Mimesis of colorfulness in black and white.”</p><p>At the end, We were happy. With the fact that something can be done. At least, something.</p></div></div></div></div>
 <script>
 var P={
 1:["A Concept Makeup Brand: DON’T",`
@@ -418,10 +400,13 @@ d|Your time isn’t yours. It is for your mission. It’s for your society.
 a|CHATGPT LOGO.
 `]};
 var K={s:"s",a:"a",c:"c",p:"p",d:"d",f:"f"};
+var T={1:"A company against makeup selling makeup.",2:"Newspapers aren’t cool anymore. Their readers always were.",3:"Give your little assemblers a chance.",4:"We know that we don’t.",5:"Message to you: See me in everyone and know that i am happy for you.",6:"Your time is not yours."};
+var $=function(s){return document.querySelector(s)};
+var home=$("#home"),hc=$("#home .c"),pg=$("#pg"),fm=$("#fm"),snd=$("#snd"),mm=$(".m"),vv=$("#vid"),fv=$("#fv"),ps=$("#ps"),ct=$("#ct"),cp=$("#cp"),cs=$("#cs"),hs=0,lastPT="mouse";
 function esc(x){return x.replace(/&/g,"&amp;").replace(/</g,"&lt;")}
-function render(k){
- var d=P[k],h="<h2>"+d[0]+"</h2>",o="",sp=false;
- d[1].trim().split("\n").forEach(function(l){
+function lines(L){
+ var o="",sp=false;
+ L.forEach(function(l){
   var i=l.indexOf("|"),t=l.slice(0,i),x=esc(l.slice(i+1));
   var scr="sacpdf".indexOf(t)>-1&&t!="";
   if(scr&&!sp){o+='<div class="sp">';sp=true}
@@ -431,32 +416,90 @@ function render(k){
   else o+='<p class="'+t+'">'+x+"</p>";
  });
  if(sp)o+="</div>";
- document.getElementById("body").innerHTML=h+o;
+ return o}
+function split(k){
+ var L=P[k][1].trim().split("\n"),pre=[],S=[],cur=null,out=[];
+ L.forEach(function(l){
+  if(l.slice(0,2)=="h|"){cur={n:l.slice(2).trim(),l:[]};S.push(cur)}
+  else if(cur)cur.l.push(l);else pre.push(l)
+ });
+ S.forEach(function(s,n){
+  var i=-1;
+  for(var j=0;j<s.l.length;j++){if("sacpdf".indexOf(s.l[j].charAt(0))>-1&&s.l[j].charAt(1)=="|"){i=j;break}}
+  var a=i>0?s.l.slice(0,i):s.l;
+  out.push({n:s.n,l:a,pre:n==0?pre:[]});
+  if(i>0)out.push({n:"Script",l:s.l.slice(i),pre:[]});
+ });
+ return out}
+function build(){
+ for(var k=1;k<=6;k++)(function(k){
+  var S=split(k),n=S.length,p=document.createElement("div");
+  p.className="pouch n"+n;p.setAttribute("role","group");p.setAttribute("aria-label",T[k]);
+  var cards=document.createElement("div");cards.className="cards";
+  S.forEach(function(c,i){
+   var o=i-(n-1)/2,b=document.createElement("button");
+   b.type="button";b.className="cd";b.dataset.h=k+"-"+i;
+   b.style.cssText="--o:"+o+";--a:"+Math.abs(o)+";--s:"+(n-1-i)+";--z:"+(i+1);
+   b.setAttribute("aria-label",c.n+" — "+P[k][0]);
+   var s=document.createElement("span");s.className="lb";s.textContent=c.n;b.appendChild(s);cards.appendChild(b);
+  });
+  p.appendChild(cards);
+  var fw=document.createElement("div");fw.className="fw";
+  var fr=document.createElement("div");fr.className="front";
+  var tt=document.createElement("span");tt.textContent=T[k];fr.appendChild(tt);fw.appendChild(fr);p.appendChild(fw);
+  var tm;
+  p.addEventListener("mouseenter",function(){if(lastPT!="mouse")return;clearTimeout(tm);tm=setTimeout(function(){openP(p)},90)});
+  p.addEventListener("mouseleave",function(){clearTimeout(tm);if(lastPT=="mouse")p.classList.remove("open")});
+  p.addEventListener("focusin",function(){openP(p)});
+  p.addEventListener("focusout",function(e){if(!p.contains(e.relatedTarget))p.classList.remove("open")});
+  p.addEventListener("click",function(e){
+   var c=e.target.closest(".cd");
+   if(c&&p.classList.contains("open")){go(c.dataset.h);return}
+   if(lastPT=="mouse")openP(p);else if(p.classList.contains("open"))p.classList.remove("open");else openP(p);
+  });
+  ps.appendChild(p);
+ })(k)}
+function openP(p){closeAll(p);p.classList.add("open")}
+function closeAll(x){document.querySelectorAll(".pouch.open").forEach(function(q){if(q!==x)q.classList.remove("open")})}
+function renderCard(k,i,S){
+ var c=S[i];
+ var o="<h2>"+esc(P[k][0])+"</h2>"+lines(c.pre)+'<h3 class="ch">'+esc(c.n)+"</h3>"+lines(c.l);
+ var sib=S.map(function(s,j){return j==i?"":'<a data-h="'+k+"-"+j+'">'+esc(s.n)+"</a>"}).join("");
+ if(sib)o+='<div class="sib">'+sib+"</div>";
+ $("#body").innerHTML=o}
+function route(h){
+ if(typeof h!="string")h=(location.hash||"").slice(1);
+ var m=/^(\d)-(\d+)$/.exec(h),k=m&&m[1],i=m?+m[2]:-1,S=(k&&P[k])?split(k):null;
+ var onC=!!(S&&S[i]),onF=h=="film",onH=!onC&&!onF;
+ if(!onH&&home.style.display!="none")hs=hc.scrollTop;
+ home.style.display=onH?"":"none";pg.style.display=onC?"block":"none";fm.style.display=onF?"block":"none";
+ snd.style.display=onH?"":"none";mm.style.display=onH?"":"none";
+ if(!onF)fv.pause();
+ if(onH){openC(false);closeAll();document.documentElement.style.background="#000";vv.play().catch(function(){});hc.scrollTop=hs}
+ else vv.pause();
+ if(onC){renderCard(k,i,S);document.documentElement.style.background="#f4efe4";window.scrollTo(0,0)}
+ if(onF){document.documentElement.style.background="#000";fm.scrollTop=0}
 }
-function route(k){
- if(typeof k!="string")k=(location.hash||"").slice(1);
- var home=document.getElementById("home"),pg=document.getElementById("pg"),ab=document.getElementById("about"),nav=document.getElementById("nav");
- var onAbout=k=="about",onPg=!!P[k];
- ab.style.display=onAbout?"block":"none";
- nav.style.display=onPg?"none":"";var mm=document.querySelector(".m");mm.style.display=onPg?"none":"";if(onAbout){document.querySelector("#about .ac").appendChild(mm);mm.classList.add("inflow")}else{document.body.appendChild(mm);mm.classList.remove("inflow")}
- document.getElementById("nva").setAttribute("aria-current",onAbout?"page":"false");
- document.getElementById("nvp").setAttribute("aria-current",(!onAbout&&!onPg)?"page":"false");
- if(onAbout){home.style.display="none";pg.style.display="none";document.documentElement.style.background="#000";ab.scrollTop=0}
- else if(onPg){render(k);home.style.display="none";pg.style.display="block";document.documentElement.style.background="#f4efe4";window.scrollTo(0,0)}
- else{home.style.display="";pg.style.display="none";document.documentElement.style.background="#000"}
-}
-document.querySelectorAll("#home a[data-k]").forEach(function(a){
- var go=function(){try{location.hash=a.dataset.k}catch(e){}route(a.dataset.k)};
- a.addEventListener("click",go);a.addEventListener("keydown",function(e){if(e.key=="Enter")go()});
-});
-var b=document.getElementById("back");
-var back=function(){try{location.hash=""}catch(e){}route("")};
-document.getElementById("nva").addEventListener("click",function(){try{location.hash="about"}catch(e){}route("about")});
-document.getElementById("nvp").addEventListener("click",function(){try{location.hash="portfolio"}catch(e){}route("portfolio")});
-b.addEventListener("click",back);b.addEventListener("keydown",function(e){if(e.key=="Enter")back()});
-var ct=document.getElementById("ct"),cp=document.getElementById("cp");
-ct.addEventListener("click",function(){var o=ct.getAttribute("aria-expanded")=="true";ct.setAttribute("aria-expanded",!o);cp.classList.toggle("open",!o);cp.style.maxHeight=o?"0":cp.scrollHeight+"px"});
-var v=document.getElementById("vid"),sb=document.getElementById("snd");v.muted=true;v.play().catch(function(){});
-sb.addEventListener("click",function(){v.muted=!v.muted;sb.textContent=v.muted?"Sound: off":"Sound: on";sb.setAttribute("aria-pressed",!v.muted);v.play().catch(function(){})});document.querySelectorAll("video.vf").forEach(function(f){f.addEventListener("play",function(){v.muted=true;sb.textContent="Sound: off";sb.setAttribute("aria-pressed","false")})});
-window.addEventListener("hashchange",function(){route()});route();
+function go(h){try{location.hash=h}catch(e){}route(h)}
+function openC(o){ct.setAttribute("aria-expanded",o);cp.classList.toggle("open",o);cp.style.maxHeight=o?cp.scrollHeight+"px":"0";cs.classList.toggle("on",o)}
+document.addEventListener("pointerdown",function(e){lastPT=e.pointerType||"mouse"},true);
+home.addEventListener("click",function(e){
+ if(e.target.closest(".pouch,h1,#wf"))return;
+ if(document.querySelector(".pouch.open")){closeAll();return}
+ go("film")});
+$("#wf").addEventListener("click",function(){go("film")});
+$("#body").addEventListener("click",function(e){var a=e.target.closest("[data-h]");if(a)go(a.dataset.h)});
+var back=function(){go("")};
+["#back","#fback"].forEach(function(s){var b=$(s);b.addEventListener("click",back);b.addEventListener("keydown",function(e){if(e.key=="Enter")back()})});
+ct.addEventListener("click",function(){openC(ct.getAttribute("aria-expanded")!="true")});
+cs.addEventListener("click",function(){openC(false)});
+window.addEventListener("resize",function(){if(ct.getAttribute("aria-expanded")=="true")cp.style.maxHeight=cp.scrollHeight+"px"});
+document.addEventListener("keydown",function(e){
+ if(e.key!="Escape")return;
+ if(home.style.display=="none")back();else{closeAll();openC(false)}});
+vv.muted=true;vv.play().catch(function(){});
+$("#snd").addEventListener("click",function(){var s=$("#snd");vv.muted=!vv.muted;s.textContent=vv.muted?"Sound: off":"Sound: on";s.setAttribute("aria-pressed",!vv.muted);vv.play().catch(function(){})});
+fv.addEventListener("play",function(){var s=$("#snd");vv.muted=true;s.textContent="Sound: off";s.setAttribute("aria-pressed","false")});
+window.addEventListener("hashchange",function(){route()});
+build();route();
 </script></body></html>
