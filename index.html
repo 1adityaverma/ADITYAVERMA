@@ -457,6 +457,6 @@ b.addEventListener("click",back);b.addEventListener("keydown",function(e){if(e.k
 var ct=document.getElementById("ct"),cp=document.getElementById("cp");
 ct.addEventListener("click",function(){var o=ct.getAttribute("aria-expanded")=="true";ct.setAttribute("aria-expanded",!o);cp.classList.toggle("open",!o);cp.style.maxHeight=o?"0":cp.scrollHeight+"px"});
 var v=document.getElementById("vid"),sb=document.getElementById("snd");v.muted=true;v.play().catch(function(){});
-sb.addEventListener("click",function(){v.muted=!v.muted;sb.textContent=v.muted?"Sound: off":"Sound: on";sb.setAttribute("aria-pressed",!v.muted);v.play().catch(function(){})});
+sb.addEventListener("click",function(){v.muted=!v.muted;sb.textContent=v.muted?"Sound: off":"Sound: on";sb.setAttribute("aria-pressed",!v.muted);v.play().catch(function(){})});document.querySelectorAll("video.vf").forEach(function(f){f.addEventListener("play",function(){v.muted=true;sb.textContent="Sound: off";sb.setAttribute("aria-pressed","false")})});
 window.addEventListener("hashchange",function(){route()});route();
 </script></body></html>
